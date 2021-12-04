@@ -7,6 +7,6 @@ namespace Elastica\Query;
  *
  * @deprecated since 3.2.5, use the MatchQuery class instead.
  */
-class Match extends MatchQuery
+class MatchQueryTwo extends MatchQuery
 {
 }
