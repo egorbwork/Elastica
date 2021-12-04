@@ -243,7 +243,7 @@ class Index implements SearchableInterface
             if ($options) {
                 try {
                     $this->delete();
-                } catch (ResponseException $e) {
+                } catch (ResponseException) {
                     // Table can't be deleted, because doesn't exist
                 }
             }
@@ -254,7 +254,7 @@ class Index implements SearchableInterface
                         case 'recreate' :
                             try {
                                 $this->delete();
-                            } catch (ResponseException $e) {
+                            } catch (ResponseException) {
                                 // Table can't be deleted, because doesn't exist
                             }
                             break;

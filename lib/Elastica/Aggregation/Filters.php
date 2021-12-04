@@ -54,7 +54,7 @@ class Filters extends AbstractAggregation
         }
 
         if ($this->hasParam('filters')
-            && count($this->getParam('filters'))
+            && (is_countable($this->getParam('filters')) ? count($this->getParam('filters')) : 0)
             && $this->_type !== $type
         ) {
             throw new InvalidException('Mix named and anonymous keys are not allowed');

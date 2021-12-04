@@ -93,7 +93,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
         $data = $response->getData();
         $this->_maxScore = isset($data['hits']['max_score']) ? (float) $data['hits']['max_score'] : 0;
         $this->_timedOut = !empty($data['timed_out']);
-        $this->_took = isset($data['took']) ? $data['took'] : 0;
+        $this->_took = $data['took'] ?? 0;
         $this->_totalHits = isset($data['hits']['total']) ? (int) $data['hits']['total'] : 0;
     }
 
@@ -143,7 +143,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
     {
         $data = $this->_response->getData();
 
-        return isset($data['suggest']) ? $data['suggest'] : [];
+        return $data['suggest'] ?? [];
     }
 
     /**
@@ -167,7 +167,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
     {
         $data = $this->_response->getData();
 
-        return isset($data['aggregations']) ? $data['aggregations'] : [];
+        return $data['aggregations'] ?? [];
     }
 
     /**

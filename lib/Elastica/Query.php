@@ -367,7 +367,7 @@ class Query extends Param
         if (isset($this->_params['post_filter'])) {
             $postFilter = $this->_params['post_filter']->toArray();
 
-            if (0 === count($postFilter)) {
+            if (0 === (is_countable($postFilter) ? count($postFilter) : 0)) {
                 unset($this->_params['post_filter']);
             }
         }

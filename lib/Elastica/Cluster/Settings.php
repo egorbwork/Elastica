@@ -81,7 +81,7 @@ class Settings
             if (isset($settings[$setting])) {
                 return $settings[$setting];
             } else {
-                if (strpos($setting, '.') !== false) {
+                if (str_contains($setting, '.')) {
                     // convert dot notation to nested arrays
                     $keys = explode('.', $setting);
                     foreach ($keys as $key) {

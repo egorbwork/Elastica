@@ -153,7 +153,7 @@ class Util
     public static function getParamName($class)
     {
         if (is_object($class)) {
-            $class = get_class($class);
+            $class = $class::class;
         }
 
         $parts = explode('\\', $class);

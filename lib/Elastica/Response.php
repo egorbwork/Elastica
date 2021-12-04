@@ -163,7 +163,7 @@ class Response
     {
         try {
             $shardsStatistics = $this->getShardsStatistics();
-        } catch (NotFoundException $e) {
+        } catch (NotFoundException) {
             return false;
         }
 
@@ -236,7 +236,7 @@ class Response
                     } else {
                         $response = JSON::parse($response);
                     }
-                } catch (JSONParseException $e) {
+                } catch (JSONParseException) {
                     // leave response as is if parse fails
                 }
             }

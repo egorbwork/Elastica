@@ -84,7 +84,7 @@ class Settings
         if (isset($settings[$setting])) {
             return $settings[$setting];
         } else {
-            if (strpos($setting, '.') !== false) {
+            if (str_contains($setting, '.')) {
                 // translate old dot-notation settings to nested arrays
                 $keys = explode('.', $setting);
                 foreach ($keys as $key) {
@@ -190,7 +190,7 @@ class Settings
         try {
             return (bool) $this->get('blocks.write');
         } catch (ResponseException $e) {
-            if (strpos($e->getMessage(), 'ClusterBlockException') !== false) {
+            if (str_contains($e->getMessage(), 'ClusterBlockException')) {
                 // hacky way to test if the metadata is blocked since bug 9203 is not fixed
                 return true;
             }

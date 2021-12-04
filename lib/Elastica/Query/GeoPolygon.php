@@ -61,6 +61,6 @@ class GeoPolygon extends AbstractQuery
      */
     public function count()
     {
-        return count($this->_key);
+        return is_countable($this->_key) ? count($this->_key) : 0;
     }
 }

@@ -65,7 +65,7 @@ class Builder extends AbstractQuery
     {
         try {
             return JSON::parse($input = $this->__toString());
-        } catch (JSONParseException $e) {
+        } catch (JSONParseException) {
             throw new InvalidException(sprintf(
                 'The produced query is not a valid json string : "%s"',
                 $input
