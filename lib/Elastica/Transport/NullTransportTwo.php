@@ -8,6 +8,6 @@ namespace Elastica\Transport;
  *
  * @author James Boehmer <james.boehmer@jamesboehmer.com>
  */
-class Null extends NullTransport
+class NullTransportTwo extends NullTransport
 {
 }

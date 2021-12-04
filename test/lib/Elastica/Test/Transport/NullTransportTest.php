@@ -85,7 +85,7 @@ class NullTransportTest extends BaseTest
 
         $request = new Request('/test');
         $params = ['name' => 'ruflin'];
-        $transport = new \Elastica\Transport\Null();
+        $transport = new \Elastica\Transport\NullTransportTwo();
         $response = $transport->exec($request, $params);
 
         $this->assertInstanceOf('\Elastica\Response', $response);
