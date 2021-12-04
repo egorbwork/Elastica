@@ -72,7 +72,7 @@ class Filter implements DSL
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-filter.html
      *
-     * @return \Elastica\Filter\Bool
+     * @return \Elastica\Filter\BoolFilterTwo
      */
     public function bool()
     {
