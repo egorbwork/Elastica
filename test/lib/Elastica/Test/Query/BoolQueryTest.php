@@ -306,7 +306,7 @@ class BoolQueryTest extends BaseTest
         $index->refresh();
 
         $this->hideDeprecated();
-        $boolQuery = new \Elastica\Query\Bool();
+        $boolQuery = new \Elastica\Query\BoolQueryTwo();
         $this->showDeprecated();
 
         $resultSet = $type->search($boolQuery);
@@ -324,7 +324,7 @@ class BoolQueryTest extends BaseTest
         }
 
         $this->hideDeprecated();
-        $reflection = new \ReflectionClass(new \Elastica\Query\Bool());
+        $reflection = new \ReflectionClass(new \Elastica\Query\BoolQueryTwo());
         $this->showDeprecated();
 
         $this->assertFileDeprecated($reflection->getFileName(), 'Elastica\Query\Bool is deprecated. Use BoolQuery instead. From PHP7 bool is reserved word and this class will be removed in further Elastica releases');
